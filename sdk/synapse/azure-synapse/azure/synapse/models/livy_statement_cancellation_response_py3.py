@@ -9,14 +9,20 @@
 # regenerated.
 # --------------------------------------------------------------------------
 
-from .monitoring_operations import MonitoringOperations
-from .spark_batch_operations import SparkBatchOperations
-from .spark_session_operations import SparkSessionOperations
-from .workspace_acl_operations import WorkspaceAclOperations
+from msrest.serialization import Model
 
-__all__ = [
-    'MonitoringOperations',
-    'SparkBatchOperations',
-    'SparkSessionOperations',
-    'WorkspaceAclOperations',
-]
+
+class LivyStatementCancellationResponse(Model):
+    """LivyStatementCancellationResponse.
+
+    :param msg:
+    :type msg: str
+    """
+
+    _attribute_map = {
+        'msg': {'key': 'msg', 'type': 'str'},
+    }
+
+    def __init__(self, *, msg: str=None, **kwargs) -> None:
+        super(LivyStatementCancellationResponse, self).__init__(**kwargs)
+        self.msg = msg

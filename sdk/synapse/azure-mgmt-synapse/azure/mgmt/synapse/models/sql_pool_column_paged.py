@@ -9,14 +9,19 @@
 # regenerated.
 # --------------------------------------------------------------------------
 
-from .monitoring_operations import MonitoringOperations
-from .spark_batch_operations import SparkBatchOperations
-from .spark_session_operations import SparkSessionOperations
-from .workspace_acl_operations import WorkspaceAclOperations
+from msrest.paging import Paged
 
-__all__ = [
-    'MonitoringOperations',
-    'SparkBatchOperations',
-    'SparkSessionOperations',
-    'WorkspaceAclOperations',
-]
+
+class SqlPoolColumnPaged(Paged):
+    """
+    A paging container for iterating over a list of :class:`SqlPoolColumn <azure.mgmt.synapse.models.SqlPoolColumn>` object
+    """
+
+    _attribute_map = {
+        'next_link': {'key': 'nextLink', 'type': 'str'},
+        'current_page': {'key': 'value', 'type': '[SqlPoolColumn]'}
+    }
+
+    def __init__(self, *args, **kwargs):
+
+        super(SqlPoolColumnPaged, self).__init__(*args, **kwargs)

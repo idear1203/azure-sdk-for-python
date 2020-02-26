@@ -9,14 +9,22 @@
 # regenerated.
 # --------------------------------------------------------------------------
 
-from .monitoring_operations import MonitoringOperations
-from .spark_batch_operations import SparkBatchOperations
-from .spark_session_operations import SparkSessionOperations
-from .workspace_acl_operations import WorkspaceAclOperations
+from msrest.serialization import Model
 
-__all__ = [
-    'MonitoringOperations',
-    'SparkBatchOperations',
-    'SparkSessionOperations',
-    'WorkspaceAclOperations',
-]
+
+class BigDataPoolPatchInfo(Model):
+    """Patch for a Big Data pool.
+
+    Properties patch for a Big Data pool.
+
+    :param tags: Updated tags for the Big Data pool
+    :type tags: dict[str, str]
+    """
+
+    _attribute_map = {
+        'tags': {'key': 'tags', 'type': '{str}'},
+    }
+
+    def __init__(self, *, tags=None, **kwargs) -> None:
+        super(BigDataPoolPatchInfo, self).__init__(**kwargs)
+        self.tags = tags

@@ -9,10 +9,20 @@
 # regenerated.
 # --------------------------------------------------------------------------
 
-from .synapse_client import SynapseClient
-from .version import VERSION
+from msrest.serialization import Model
 
-__all__ = ['SynapseClient']
 
-__version__ = VERSION
+class SetWorkspaceAdministratorsRequest(Model):
+    """SetWorkspaceAdministratorsRequest.
 
+    :param administrators:
+    :type administrators: list[str]
+    """
+
+    _attribute_map = {
+        'administrators': {'key': 'administrators', 'type': '[str]'},
+    }
+
+    def __init__(self, **kwargs):
+        super(SetWorkspaceAdministratorsRequest, self).__init__(**kwargs)
+        self.administrators = kwargs.get('administrators', None)

@@ -9,14 +9,24 @@
 # regenerated.
 # --------------------------------------------------------------------------
 
-from .monitoring_operations import MonitoringOperations
-from .spark_batch_operations import SparkBatchOperations
-from .spark_session_operations import SparkSessionOperations
-from .workspace_acl_operations import WorkspaceAclOperations
+from msrest.serialization import Model
 
-__all__ = [
-    'MonitoringOperations',
-    'SparkBatchOperations',
-    'SparkSessionOperations',
-    'WorkspaceAclOperations',
-]
+
+class Edge(Model):
+    """Edge.
+
+    :param id:
+    :type id: int
+    :param child_id:
+    :type child_id: int
+    """
+
+    _attribute_map = {
+        'id': {'key': 'id', 'type': 'int'},
+        'child_id': {'key': 'childId', 'type': 'int'},
+    }
+
+    def __init__(self, *, id: int=None, child_id: int=None, **kwargs) -> None:
+        super(Edge, self).__init__(**kwargs)
+        self.id = id
+        self.child_id = child_id

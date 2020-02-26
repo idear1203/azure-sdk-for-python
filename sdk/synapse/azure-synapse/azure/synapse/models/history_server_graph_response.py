@@ -9,14 +9,20 @@
 # regenerated.
 # --------------------------------------------------------------------------
 
-from .monitoring_operations import MonitoringOperations
-from .spark_batch_operations import SparkBatchOperations
-from .spark_session_operations import SparkSessionOperations
-from .workspace_acl_operations import WorkspaceAclOperations
+from msrest.serialization import Model
 
-__all__ = [
-    'MonitoringOperations',
-    'SparkBatchOperations',
-    'SparkSessionOperations',
-    'WorkspaceAclOperations',
-]
+
+class HistoryServerGraphResponse(Model):
+    """HistoryServerGraphResponse.
+
+    :param data:
+    :type data: ~azure.synapse.models.HistoryServerGraphResponseData
+    """
+
+    _attribute_map = {
+        'data': {'key': 'data', 'type': 'HistoryServerGraphResponseData'},
+    }
+
+    def __init__(self, **kwargs):
+        super(HistoryServerGraphResponse, self).__init__(**kwargs)
+        self.data = kwargs.get('data', None)

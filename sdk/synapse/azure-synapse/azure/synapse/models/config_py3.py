@@ -9,14 +9,20 @@
 # regenerated.
 # --------------------------------------------------------------------------
 
-from .monitoring_operations import MonitoringOperations
-from .spark_batch_operations import SparkBatchOperations
-from .spark_session_operations import SparkSessionOperations
-from .workspace_acl_operations import WorkspaceAclOperations
+from msrest.serialization import Model
 
-__all__ = [
-    'MonitoringOperations',
-    'SparkBatchOperations',
-    'SparkSessionOperations',
-    'WorkspaceAclOperations',
-]
+
+class Config(Model):
+    """Config.
+
+    :param is_hive_enabled:
+    :type is_hive_enabled: bool
+    """
+
+    _attribute_map = {
+        'is_hive_enabled': {'key': 'isHiveEnabled', 'type': 'bool'},
+    }
+
+    def __init__(self, *, is_hive_enabled: bool=None, **kwargs) -> None:
+        super(Config, self).__init__(**kwargs)
+        self.is_hive_enabled = is_hive_enabled
